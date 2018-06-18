@@ -19,6 +19,8 @@ requirements:
     build:
         - cmake
         - pkg-config  # [osx]
+        - {{ compiler('cxx') }}
+    host:
         - {{ compiler('c') }}
         - {{ compiler('cxx') }}
     host:
