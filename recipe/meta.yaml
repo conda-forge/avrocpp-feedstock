@@ -13,30 +13,27 @@ source:
 
 build:
     number: 0
-    skip: true  # [win and not py36]
+    skip: true  # [win and vc<14]
 
 requirements:
     build:
-        - python  # [win]
-        - vc 9  # [win and py27]
-        - vc 10  # [win and py34]
-        - vc 14  # [win and py>=35]
-        - toolchain
         - cmake
-        - snappy
-        - xz 5.2.*
         - pkg-config  # [osx]
-        - zlib 1.2.*
-        - boost 1.66.*
+        - {{ compiler('cxx') }}
+    host:
+        - {{ compiler('c') }}
+        - {{ compiler('cxx') }}
+    host:
+        - snappy
+        - xz
+        - zlib
+        - boost
         - msinttypes  # [win]
     run:
-        - vc 9  # [win and py27]
-        - vc 10  # [win and py34]
-        - vc 14  # [win and py>=35]
-        - xz 5.2.*
+        - xz
         - snappy
-        - zlib 1.2.*
-        - boost 1.66.*
+        - zlib
+        - boost
 
 test:
     commands:
