@@ -1,5 +1,5 @@
-{% set version = "1.8.2" %}
-{% set hash = "c17d84613187dda3611c9c95d6f3388036a330ba" %}
+{% set version = "1.9.1" %}
+{% set hash = "9eaf5a68833224da58ebff5486654d455749a027" %}
 {% set name = "avrocpp" %}
 
 package:
