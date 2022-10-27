@@ -19,16 +19,12 @@ macos_machine:
 pin_run_as_build:
   boost:
     max_pin: x.x.x
-  xz:
-    max_pin: x.x
-  zlib:
-    max_pin: x.x
 snappy:
 - '1'
 target_platform:
 - osx-64
 xz:
-- '5.2'
+- '5'
 zip_keys:
 - - c_compiler_version
   - cxx_compiler_version

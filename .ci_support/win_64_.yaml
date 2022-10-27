@@ -11,10 +11,6 @@ cxx_compiler:
 pin_run_as_build:
   boost:
     max_pin: x.x.x
-  xz:
-    max_pin: x.x
-  zlib:
-    max_pin: x.x
 snappy:
 - '1'
 target_platform:
@@ -22,6 +18,6 @@ target_platform:
 vc:
 - '14'
 xz:
-- '5.2'
+- '5'
 zlib:
 - '1.2'
