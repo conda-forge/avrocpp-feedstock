@@ -12,12 +12,13 @@ source:
     sha1: {{ hash }}
 
 build:
-    number: 0
+    number: 1
     skip: true  # [win and vc<14]
 
 requirements:
     build:
         - cmake
+        - make        # [unix]
         - pkg-config  # [osx]
         - {{ compiler('c') }}
         - {{ compiler('cxx') }}
@@ -36,8 +37,6 @@ requirements:
 test:
     commands:
         - test -f ${PREFIX}/lib/libavrocpp_s.a  # [unix]
-        - conda inspect objects {{ name }}      # [osx]
-        - conda inspect linkages {{ name }}     # [linux]
 
 about:
   home: http://hadoop.apache.org/avro
