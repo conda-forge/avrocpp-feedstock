@@ -1,5 +1,5 @@
-{% set version = "1.8.2" %}
-{% set hash = "c17d84613187dda3611c9c95d6f3388036a330ba" %}
+{% set version = "1.11.3" %}
+{% set hash = "2e885b3ca2666398ebfd136d000ab86a07244967da736227f5e42723ac10b50a0bbaa18ccad48961b8dbbd2cb14b6e5d068177c37287d71ebcd5e3ead8a9a98b" %}
 {% set name = "avrocpp" %}
 
 package:
@@ -9,7 +9,7 @@ package:
 source:
     fn: avro-cpp-{{ version }}.tar.gz
     url: https://archive.apache.org/dist/avro/avro-{{ version }}/cpp/avro-cpp-{{ version }}.tar.gz
-    sha1: {{ hash }}
+    sha512: {{ hash }}
 
 build:
     number: 0
