@@ -25,13 +25,8 @@ requirements:
     - snappy
     - xz
     - zlib
-    - boost
+    - libboost-devel
     - msinttypes      # [win]
-  run:
-    - xz
-    - snappy
-    - zlib
-    - boost
 
 test:
   commands:
