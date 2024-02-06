@@ -3,41 +3,41 @@
 {% set name = "avrocpp" %}
 
 package:
-    name: {{ name }}
-    version: {{ version }}
+  name: {{ name }}
+  version: {{ version }}
 
 source:
-    fn: avro-cpp-{{ version }}.tar.gz
-    url: https://archive.apache.org/dist/avro/avro-{{ version }}/cpp/avro-cpp-{{ version }}.tar.gz
-    sha512: {{ hash }}
+  fn: avro-cpp-{{ version }}.tar.gz
+  url: https://archive.apache.org/dist/avro/avro-{{ version }}/cpp/avro-cpp-{{ version }}.tar.gz
+  sha512: {{ hash }}
 
 build:
-    number: 0
-    skip: true  # [win and vc<14]
+  number: 0
+  skip: true  # [win and vc<14]
 
 requirements:
-    build:
-        - cmake
-        - pkg-config  # [osx]
-        - {{ compiler('c') }}
-        - {{ compiler('cxx') }}
-    host:
-        - snappy
-        - xz
-        - zlib
-        - boost
-        - msinttypes  # [win]
-    run:
-        - xz
-        - snappy
-        - zlib
-        - boost
+  build:
+    - cmake
+    - pkg-config      # [osx]
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+  host:
+    - snappy
+    - xz
+    - zlib
+    - boost
+    - msinttypes      # [win]
+  run:
+    - xz
+    - snappy
+    - zlib
+    - boost
 
 test:
-    commands:
-        - test -f ${PREFIX}/lib/libavrocpp_s.a  # [unix]
-        - conda inspect objects {{ name }}      # [osx]
-        - conda inspect linkages {{ name }}     # [linux]
+  commands:
+    - test -f ${PREFIX}/lib/libavrocpp_s.a  # [unix]
+    - conda inspect objects {{ name }}      # [osx]
+    - conda inspect linkages {{ name }}     # [linux]
 
 about:
   home: http://hadoop.apache.org/avro
