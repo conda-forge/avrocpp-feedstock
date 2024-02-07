@@ -1,5 +1,6 @@
 {% set version = "1.11.3" %}
 {% set hash = "2e885b3ca2666398ebfd136d000ab86a07244967da736227f5e42723ac10b50a0bbaa18ccad48961b8dbbd2cb14b6e5d068177c37287d71ebcd5e3ead8a9a98b" %}
+{% set hash = "fba242aef77ec819d07561fcba93751721956de8d0cae8e1f2f300b54b331bae" %}
 {% set name = "avrocpp" %}
 
 package:
