@@ -37,7 +37,7 @@ test:
 
 about:
   home: http://hadoop.apache.org/avro
-  license: Apache 2.0
+  license: Apache-2.0
   license_family: Apache
   license_file: LICENSE
   summary: 'Avro is a serialization and RPC framework.'
