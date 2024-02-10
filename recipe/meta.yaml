@@ -7,9 +7,9 @@ package:
   version: {{ version }}
 
 source:
-  fn: avro-cpp-{{ version }}.tar.gz
-  url: https://archive.apache.org/dist/avro/avro-{{ version }}/cpp/avro-cpp-{{ version }}.tar.gz
-  sha256: {{ hash }}
+  - url: https://archive.apache.org/dist/avro/avro-{{ version }}/cpp/avro-cpp-{{ version }}.tar.gz
+    sha256: {{ hash }}
+  - path: ../src
 
 build:
   number: 0
