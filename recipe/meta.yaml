@@ -11,7 +11,7 @@ source:
     sha256: {{ hash }}
   - path: ../src/FindSnappy.cmake
   - path: ../src/msstdint.h  # [win]
-    folder: api/msstdint.h   # [win]
+    folder: api\msstdint.h   # [win]
 
 build:
   number: 0
