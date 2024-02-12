@@ -13,6 +13,7 @@ cmake -G "NMake Makefiles" ^
     -DCMAKE_CXX_STANDARD=14 ^
     -DCMAKE_CXX_STANDARD_REQUIRED=ON ^
     -DCMAKE_CXX_EXTENSIONS=OFF ^
+    -DCMAKE_CXX_FLAGS="/FI api/msstdint.h" ^
     ..
 if errorlevel 1 exit 1
 
