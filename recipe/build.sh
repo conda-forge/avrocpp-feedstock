@@ -2,11 +2,11 @@
 
 mkdir build
 cd build
-echo $PREFIX
 
 cmake .. \
   -DCMAKE_INSTALL_PREFIX=$PREFIX \
   -DBOOST_ROOT=$PREFIX \
+  -DCMAKE_MODULE_PATH="$RECIPE_DIR/../src" \
   -DSNAPPY_ROOT_DIR=$PREFIX \
   -DCMAKE_BUILD_TYPE=RelWithDebInfo \
   -DCMAKE_CXX_FLAGS="-Wno-error=c++20-compat" \

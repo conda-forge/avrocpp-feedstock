@@ -9,7 +9,7 @@ package:
 source:
   - url: https://archive.apache.org/dist/avro/avro-{{ version }}/cpp/avro-cpp-{{ version }}.tar.gz
     sha256: {{ hash }}
-  - path: ../src/FindSnappy.cmake
+  - path: ../src/FindSnappy.cmake # [win]
   - path: ../src/msstdint.h  # [win]
     folder: api\msstdint.h   # [win]
 
