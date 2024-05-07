@@ -9,7 +9,7 @@ cmake %CMAKE_ARGS% -G "NMake Makefiles" ^
     -DBUILD_SHARED_LIBS=ON ^
     -DCMAKE_CXX_STANDARD=14 ^
     -DCMAKE_CXX_STANDARD_REQUIRED=ON ^
-    -DCMAKE_CXX_EXTENSIONS=OFF ^
+    -DCMAKE_CXX_EXTENSIONS=ON ^
 
 if errorlevel 1 exit 1
 
