@@ -21,6 +21,7 @@ requirements:
         - make
         - cmake
         - pkg-config  # [osx]
+        - {{ stdlib('c') }}
         - {{ compiler('c') }}
         - {{ compiler('cxx') }}
     host:

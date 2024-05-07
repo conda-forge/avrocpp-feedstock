@@ -1,0 +1,25 @@
+From ceec0e2562f8ac4859c0535ae5f9f4344ca654fb Mon Sep 17 00:00:00 2001
+From: Austin Morton <austin.morton@aquatic.com>
+Date: Tue, 7 May 2024 16:34:16 +0000
+Subject: [PATCH] Make constinit a reserved word
+
+---
+ lang/c++/impl/avrogencpp.cc | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/lang/c++/impl/avrogencpp.cc b/lang/c++/impl/avrogencpp.cc
+index 94f7befdc..20a84cb0c 100644
+--- a/lang/c++/impl/avrogencpp.cc
++++ b/lang/c++/impl/avrogencpp.cc
+@@ -130,7 +130,7 @@ static string decorate(const std::string &name) {
+     static const char *cppReservedWords[] = {
+         "alignas", "alignof", "and", "and_eq", "asm", "auto", "bitand", "bitor", "bool", "break",
+         "case", "catch", "char", "char8_t", "char16_t", "char32_t", "class", "compl", "concept",
+-        "const", "consteval", "constexpr", "const_cast", "continue", "co_await", "co_return",
++        "const", "consteval", "constexpr", "constinit", "const_cast", "continue", "co_await", "co_return",
+         "co_yield", "decltype", "default", "delete", "do", "double", "dynamic_cast", "else",
+         "enum", "explicit", "export", "extern", "false", "float", "for", "friend", "goto", "if",
+         "import", "inline", "int", "long", "module", "mutable", "namespace", "new", "noexcept", "not",
+-- 
+2.43.2
+
