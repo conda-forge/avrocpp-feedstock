@@ -15,6 +15,9 @@ cmake ^
     -DCMAKE_VERBOSE_MAKEFILE=ON
 if errorlevel 1 exit 1
 
+cmake --build build --config Release
+if errorlevel 1 exit 1
+
 cmake --build build --config Release --target test
 if errorlevel 1 exit 1
 

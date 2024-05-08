@@ -16,5 +16,6 @@ cmake \
   -DCMAKE_CXX_EXTENSIONS=OFF \
   -DCMAKE_VERBOSE_MAKEFILE=ON
 
+cmake --build build --config RelWithDebInfo
 cmake --build build --config RelWithDebInfo --target test
 cmake --build build --config RelWithDebInfo --target install
