@@ -34,7 +34,7 @@ requirements:
 test:
     commands:
         - test -f ${PREFIX}/lib/libavrocpp_s.a           # [unix]
-        - test -f ${PREFIX}/lib/libavrocpp.${SHLIB_EXT}  # [unix]
+        - test -f ${PREFIX}/lib/libavrocpp${SHLIB_EXT}   # [unix]
         - test -f ${PREFIX}/include/avro/Types.hh        # [unix]
         - if not exist %PREFIX%\\Library\\include\\avro\\Types.hh exit 1  # [win]
         - if not exist %PREFIX%\\Library\\lib\\avrocpp.dll exit 1         # [win]
