@@ -11,6 +11,7 @@ source:
     sha256: da377ac1cf8b91458bf702cbcfb214eecb5c399b267f0ca9c0aade6cabaf126e
     patches:
         - patches/0001-Make-constinit-a-reserved-word.patch
+        - patches/0002-Fix-linker-error-in-tests.patch
 
 build:
     number: 0
@@ -29,13 +30,12 @@ requirements:
         - xz
         - zlib
         - libboost-devel
-        - msinttypes  # [win]
 
 test:
     commands:
-        - test -f ${PREFIX}/lib/libavrocpp_s.a      # [unix]
-        - test -f ${PREFIX}/lib/libavrocpp.so       # [unix]
-        - test -f ${PREFIX}/include/avro/Types.hh   # [unix]
+        - test -f ${PREFIX}/lib/libavrocpp_s.a          # [unix]
+        - test -f ${PREFIX}/lib/libavrocpp.${SHLIB_EXT} # [unix]
+        - test -f ${PREFIX}/include/avro/Types.hh       # [unix]
         - if not exist %PREFIX%\\Library\\include\\avro\\Types.hh exit 1  # [win]
 
 about:
