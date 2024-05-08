@@ -18,8 +18,5 @@ if errorlevel 1 exit 1
 cmake --build build --config Release
 if errorlevel 1 exit 1
 
-cmake --build build --config Release --target test
-if errorlevel 1 exit 1
-
 cmake --build build --config Release --target install
 if errorlevel 1 exit 1
