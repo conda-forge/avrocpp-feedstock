@@ -1,15 +1,21 @@
 #!/bin/bash
 
-mkdir build
-cd build
-echo $PREFIX
+set -euxo pipefail
 
-cmake .. \
-  -DCMAKE_INSTALL_PREFIX=$PREFIX \
+cmake \
+  ${CMAKE_ARGS} \
+  -S lang/c++ \
+  -B build \
+  -G Ninja \
   -DBOOST_ROOT=$PREFIX \
   -DSNAPPY_ROOT_DIR=$PREFIX \
-  -DCMAKE_BUILD_TYPE=RelWithDebInfo 
+  -DCMAKE_BUILD_TYPE=RelWithDebInfo \
+  -DBUILD_SHARED_LIBS=ON \
+  -DCMAKE_CXX_STANDARD=14 \
+  -DCMAKE_CXX_STANDARD_REQUIRED=ON \
+  -DCMAKE_CXX_EXTENSIONS=OFF \
+  -DCMAKE_VERBOSE_MAKEFILE=ON
 
-make # VERBOSE=1
-make test
-make install
+cmake --build build --config RelWithDebInfo
+cmake --build build --config RelWithDebInfo --target test
+cmake --build build --config RelWithDebInfo --target install

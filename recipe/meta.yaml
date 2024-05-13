@@ -1,5 +1,4 @@
-{% set version = "1.8.2" %}
-{% set hash = "c17d84613187dda3611c9c95d6f3388036a330ba" %}
+{% set version = "1.11.3" %}
 {% set name = "avrocpp" %}
 
 package:
@@ -7,9 +6,12 @@ package:
     version: {{ version }}
 
 source:
-    fn: avro-cpp-{{ version }}.tar.gz
-    url: https://archive.apache.org/dist/avro/avro-{{ version }}/cpp/avro-cpp-{{ version }}.tar.gz
-    sha1: {{ hash }}
+    fn: release-{{ version }}.tar.gz
+    url: https://github.com/apache/avro/archive/release-{{ version }}.tar.gz
+    sha256: da377ac1cf8b91458bf702cbcfb214eecb5c399b267f0ca9c0aade6cabaf126e
+    patches:
+        - patches/0001-Make-constinit-a-reserved-word.patch
+        - patches/0002-Fix-linker-error-in-tests.patch
 
 build:
     number: 0
@@ -17,33 +19,31 @@ build:
 
 requirements:
     build:
+        - ninja
         - cmake
         - pkg-config  # [osx]
+        - {{ stdlib('c') }}
         - {{ compiler('c') }}
         - {{ compiler('cxx') }}
     host:
         - snappy
         - xz
         - zlib
-        - boost
-        - msinttypes  # [win]
-    run:
-        - xz
-        - snappy
-        - zlib
-        - boost
+        - libboost-devel
 
 test:
     commands:
-        - test -f ${PREFIX}/lib/libavrocpp_s.a  # [unix]
-        - conda inspect objects {{ name }}      # [osx]
-        - conda inspect linkages {{ name }}     # [linux]
+        - test -f ${PREFIX}/lib/libavrocpp_s.a           # [unix]
+        - test -f ${PREFIX}/lib/libavrocpp${SHLIB_EXT}   # [unix]
+        - test -f ${PREFIX}/include/avro/Types.hh        # [unix]
+        - if not exist %PREFIX%\\Library\\include\\avro\\Types.hh exit 1  # [win]
+        - if not exist %PREFIX%\\Library\\lib\\avrocpp.dll exit 1         # [win]
 
 about:
-  home: http://hadoop.apache.org/avro
-  license: Apache 2.0
+  home: https://avro.apache.org
+  license: Apache-2.0
   license_family: Apache
-  license_file: LICENSE
+  license_file: LICENSE.txt
   summary: 'Avro is a serialization and RPC framework.'
 
 
