@@ -3,9 +3,9 @@ About avrocpp-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/avrocpp-feedstock/blob/main/LICENSE.txt)
 
-Home: http://hadoop.apache.org/avro
+Home: https://avro.apache.org
 
-Package license: Apache 2.0
+Package license: Apache-2.0
 
 Summary: Avro is a serialization and RPC framework.
 
@@ -176,5 +176,6 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@apmorton](https://github.com/apmorton/)
 * [@mariusvniekerk](https://github.com/mariusvniekerk/)
 
