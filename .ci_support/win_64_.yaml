@@ -11,7 +11,7 @@ cxx_compiler:
 libboost_devel:
 - '1.84'
 snappy:
-- '1.1'
+- '1.2'
 target_platform:
 - win-64
 vc:
@@ -19,4 +19,4 @@ vc:
 xz:
 - '5'
 zlib:
-- '1.2'
+- '1'
