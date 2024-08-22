@@ -10,7 +10,6 @@ source:
   url: https://github.com/apache/avro/archive/release-{{ version }}.tar.gz
   sha256: 51832f9c2e81fa95addb74be627dac27b4883ec2c8627ec8471d99cfea787555
   patches:
-    - patches/0001-Make-constinit-a-reserved-word.patch
     - patches/0002-Fix-linker-error-in-tests.patch
 
 build:
