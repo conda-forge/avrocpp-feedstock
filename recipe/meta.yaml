@@ -14,7 +14,7 @@ source:
         - patches/0002-Fix-linker-error-in-tests.patch
 
 build:
-    number: 3
+    number: 4
     skip: true  # [win and vc<14]
 
 requirements:
@@ -27,7 +27,7 @@ requirements:
         - {{ compiler('cxx') }}
     host:
         - snappy
-        - xz
+        - liblzma-devel
         - zlib
         - libboost-devel
 
