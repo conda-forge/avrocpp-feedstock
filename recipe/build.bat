@@ -5,6 +5,7 @@ cmake ^
     -S lang/c++ ^
     -B build ^
     -G Ninja ^
+    -DAVRO_BUILD_TESTS=OFF ^
     -DBOOST_ROOT:PATH="%PREFIX%" ^
     -DSNAPPY_ROOT_DIR:PATH="%PREFIX%" ^
     -DCMAKE_BUILD_TYPE:STRING=Release ^
