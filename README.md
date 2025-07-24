@@ -3,7 +3,7 @@ About avrocpp-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/avrocpp-feedstock/blob/main/LICENSE.txt)
 
-Home: https://avro.apache.org
+Home: https://avro.apache.org/
 
 Package license: Apache-2.0
 
