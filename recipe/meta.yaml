@@ -20,7 +20,7 @@ build:
 requirements:
     build:
         - ninja
-        - cmake
+        - cmake <4
         - pkg-config  # [osx]
         - {{ stdlib('c') }}
         - {{ compiler('c') }}
