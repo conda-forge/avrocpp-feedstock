@@ -51,7 +51,7 @@ cmake \
   -DCMAKE_VERBOSE_MAKEFILE=ON
 
 cmake --build build --config RelWithDebInfo
-if [[ "${CONDA_BUILD_CROSS_COMPILATION:-0}" != "1" || "${CROSSCOMPILING_EMULATOR:-0}" != "" ]]; then
+if [[ "${CONDA_BUILD_CROSS_COMPILATION:-0}" != "1" || "${CROSSCOMPILING_EMULATOR:-0}" != "0" ]]; then
   cmake --build build --config RelWithDebInfo --target test
 fi
 cmake --build build --config RelWithDebInfo --target install
