@@ -2,7 +2,7 @@
 
 set -euxo pipefail
 
-if [[ "$CONDA_BUILD_CROSS_COMPILATION" == "1" ]]; then
+if [[ "${CONDA_BUILD_CROSS_COMPILATION:-0}" == "1" ]]; then
   (
     mkdir -p build-native
     cd build-native
@@ -51,5 +51,7 @@ cmake \
   -DCMAKE_VERBOSE_MAKEFILE=ON
 
 cmake --build build --config RelWithDebInfo
-cmake --build build --config RelWithDebInfo --target test
+if [[ "${CONDA_BUILD_CROSS_COMPILATION:-0}" != "1" || "${CROSSCOMPILING_EMULATOR:-0}" != "" ]]; then
+  cmake --build build --config RelWithDebInfo --target test
+fi
 cmake --build build --config RelWithDebInfo --target install
