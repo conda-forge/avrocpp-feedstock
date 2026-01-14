@@ -18,6 +18,8 @@ cxx_compiler:
 - clangxx
 cxx_compiler_version:
 - '19'
+fmt:
+- '12.1'
 libboost_devel:
 - '1.88'
 liblzma_devel:
