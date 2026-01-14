@@ -39,6 +39,7 @@ requirements:
     - liblzma-devel
     - zlib
     - libboost-devel
+    - fmt
 
 tests:
   - script:
