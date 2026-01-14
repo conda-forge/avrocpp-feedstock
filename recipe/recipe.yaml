@@ -49,7 +49,7 @@ tests:
       - if: win
         then:
           - if not exist %PREFIX%\\Library\\include\\avro\\Types.hh exit 1
-          - if not exist %PREFIX%\\Library\\lib\\avrocpp.dll exit 1
+          - if not exist %PREFIX%\\Library\\bin\\avrocpp.dll exit 1
 
 about:
   license: Apache-2.0
