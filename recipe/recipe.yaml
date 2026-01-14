@@ -11,8 +11,6 @@ source:
   url: https://github.com/apache/avro/archive/release-${{ version }}.tar.gz
   sha256: c915b531ed952c067a56810c8b0a87f4d8837079b45c73ebdd6065d8e0a54381
   patches:
-    - if: win
-      then: patches/0001-Remove-tests.patch
     - patches/0002-Fix-linker-error-in-tests.patch
 
 build:
