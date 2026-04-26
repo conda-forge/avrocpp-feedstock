@@ -21,7 +21,7 @@ cxx_compiler_version:
 fmt:
 - '12.1'
 libboost_devel:
-- '1.88'
+- '1.90'
 liblzma_devel:
 - '5'
 macos_machine:
