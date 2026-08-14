@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "1.12.1"
+  version: "1.12.2"
 
 package:
   name: avrocpp
@@ -9,12 +9,12 @@ package:
 
 source:
   url: https://github.com/apache/avro/archive/release-${{ version }}.tar.gz
-  sha256: c915b531ed952c067a56810c8b0a87f4d8837079b45c73ebdd6065d8e0a54381
+  sha256: c5be7f66eadd55d603b683fffa936e9056e908739922854f97a9db61b8a206cd
   patches:
     - patches/0002-Fix-linker-error-in-tests.patch
 
 build:
-  number: 1
+  number: 0
 
 requirements:
   build:
