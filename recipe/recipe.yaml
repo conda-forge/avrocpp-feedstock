@@ -12,6 +12,8 @@ source:
   sha256: c5be7f66eadd55d603b683fffa936e9056e908739922854f97a9db61b8a206cd
   patches:
     - patches/0002-Fix-linker-error-in-tests.patch
+    # Boost.System is header-only; Boost 1.90 no longer provides its compiled target.
+    - patches/0003-Use-header-only-Boost-System.patch
 
 build:
   number: 0
