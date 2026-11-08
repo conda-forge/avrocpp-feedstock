@@ -221,4 +221,5 @@ Feedstock Maintainers
 
 * [@apmorton](https://github.com/apmorton/)
 * [@mariusvniekerk](https://github.com/mariusvniekerk/)
+* [@timkpaine](https://github.com/timkpaine/)
 
