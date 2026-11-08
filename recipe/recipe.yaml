@@ -16,7 +16,7 @@ source:
     - patches/0003-Use-header-only-Boost-System.patch
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
