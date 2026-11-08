@@ -1,0 +1,48 @@
+--- a/lang/c++/CMakeLists.txt
++++ b/lang/c++/CMakeLists.txt
+@@ -80,9 +80,9 @@
+ 
+ if (AVRO_BUILD_TESTS OR AVRO_USE_BOOST)
+     # Boost 1.70 and above provide a BoostConfig.cmake package configuration file.
+-    # It guarantees that Boost::system target exists if found.
++    # It guarantees that Boost::headers target exists if found.
+     # See https://cmake.org/cmake/help/latest/policy/CMP0167.html
+-    find_package (Boost 1.70 REQUIRED CONFIG COMPONENTS system)
++    find_package (Boost 1.70 REQUIRED CONFIG)
+ endif ()
+ 
+ find_package(fmt)
+@@ -153,11 +153,11 @@
+       $<BUILD_INTERFACE:ZLIB::ZLIB>
+       $<BUILD_INTERFACE:$<TARGET_NAME_IF_EXISTS:Snappy::snappy>>
+       $<$<BOOL:${zstd_FOUND}>:$<BUILD_INTERFACE:$<TARGET_NAME_IF_EXISTS:${ZSTD_TARGET}>>>
+-      $<BUILD_INTERFACE:$<TARGET_NAME_IF_EXISTS:Boost::system>>
++      $<BUILD_INTERFACE:$<TARGET_NAME_IF_EXISTS:Boost::headers>>
+       $<INSTALL_INTERFACE:ZLIB::ZLIB>
+       $<INSTALL_INTERFACE:$<TARGET_NAME_IF_EXISTS:Snappy::snappy>>
+       $<$<BOOL:${zstd_FOUND}>:$<INSTALL_INTERFACE:$<TARGET_NAME_IF_EXISTS:${ZSTD_TARGET}>>>
+-      $<INSTALL_INTERFACE:$<TARGET_NAME_IF_EXISTS:Boost::system>>
++      $<INSTALL_INTERFACE:$<TARGET_NAME_IF_EXISTS:Boost::headers>>
+     )
+     target_include_directories (${target} PUBLIC
+       $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+@@ -226,7 +226,7 @@
+ 
+     macro (unittest name)
+         add_executable (${name} test/${name}.cc)
+-        target_link_libraries (${name} ${AVRO_LINK_LIB} Boost::system ZLIB::ZLIB $<TARGET_NAME_IF_EXISTS:Snappy::snappy> $<$<BOOL:${zstd_FOUND}>:$<TARGET_NAME_IF_EXISTS:${ZSTD_TARGET}>>)
++        target_link_libraries (${name} ${AVRO_LINK_LIB} Boost::headers ZLIB::ZLIB $<TARGET_NAME_IF_EXISTS:Snappy::snappy> $<$<BOOL:${zstd_FOUND}>:$<TARGET_NAME_IF_EXISTS:${ZSTD_TARGET}>>)
+         add_test (NAME ${name} WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+             COMMAND ${CMAKE_CURRENT_BINARY_DIR}/${name})
+     endmacro (unittest)
+--- a/lang/c++/cmake/avro-cpp-config.cmake.in
++++ b/lang/c++/cmake/avro-cpp-config.cmake.in
+@@ -43,7 +43,7 @@
+     find_dependency(Snappy REQUIRED)
+ endif()
+ if(@Boost_FOUND@)
+-    find_dependency(Boost 1.70 REQUIRED COMPONENTS system)
++    find_dependency(Boost 1.70 REQUIRED CONFIG)
+ endif()
+ if(@zstd_FOUND@)
+     find_dependency(zstd REQUIRED)
